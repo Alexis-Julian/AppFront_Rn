@@ -1,98 +1,8 @@
 "use client";
-/* export default function ListTable() {
-	const escribanos = [
-		{
-			department: "Capital",
-			location: "Santa Rosa",
-			name: "Martin",
-			address: "H.Lagos 394",
-			TEL: "42343",
-			"REG.N": "1.T",
-		},
-		{
-			department: "Capital",
-			location: "Santa Rosa",
-			name: "Raul",
-			address: "H.Lagos 394",
-			TEL: "42343",
-			"REG.N": "1.T",
-		},
-		{
-			department: "Maraco",
-			location: "General Pico",
-			name: "Melani",
-			address: "H.Lagos 394",
-			TEL: "42343",
-			"REG.N": "1.T",
-		},
-		{
-			department: "Maraco",
-			location: "General Pico",
-			name: "Maria Eugenia",
-			address: "H.Lagos 394",
-			TEL: "42343",
-			"REG.N": "1.T",
-		},
-		{
-			department: "Andreani",
-			location: "General Pico",
-			name: "Maria Eugenia",
-			address: "H.Lagos 394",
-			TEL: "42343",
-			"REG.N": "1.T",
-		},
-		{
-			department: "Rancul",
-			location: "Rancul",
-			name: "Maria Resana",
-			address: "H.Lagos 394",
-			TEL: "42343",
-			"REG.N": "1.T",
-		},
-		{
-			department: "Caleufu",
-			location: "Rancul",
-			name: "Giraudo",
-			address: "H.Lagos 394",
-			TEL: "42343",
-			"REG.N": "1.T",
-		},
-	];
 
-	function itemTable() {
-		return <li className="flex "></li>;
-	}
-	return (
-		<ul className="bg-quaternary/5 m-2 rounded-md">
-			{escribanos.map((escribano) => {
-				return itemTable();
-			})}
-		</ul>
-	);
-}
- */
-
-import {
-	MagnifyingGlassIcon,
-	ChevronUpDownIcon,
-} from "@heroicons/react/24/outline";
-import { PencilIcon, UserPlusIcon } from "@heroicons/react/24/solid";
-import {
-	Card,
-	CardHeader,
-	Input,
-	Typography,
-	Button,
-	CardBody,
-	Chip,
-	CardFooter,
-	Tabs,
-	TabsHeader,
-	Tab,
-	Avatar,
-	IconButton,
-	Tooltip,
-} from "@material-tailwind/react";
+import { ChevronUpDownIcon } from "@heroicons/react/24/outline";
+import { Card, CardBody } from "@material-tailwind/react";
+import ItemTable from "./ItemTable";
 
 const TABS = [
 	{
@@ -109,53 +19,194 @@ const TABS = [
 	},
 ];
 
-const TABLE_HEAD = ["Member", "Function", "Status", "Employed", ""];
+const TABLE_HEAD = [
+	"REG. Nº",
+	"Escribano",
+	"T. Escribano",
+	"Localidad",
+	"Departamento",
+	"Estado",
+	"",
+];
 
 const TABLE_ROWS = [
 	{
-		img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg",
-		name: "John Michael",
-		email: "john@creative-tim.com",
-		job: "Manager",
-		org: "Organization",
-		online: true,
-		date: "23/04/18",
+		department: "Capital",
+		location: [
+			{
+				name: "Rancul",
+				affiliate: [
+					{
+						img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg",
+						name: "John Michael",
+						email: "john@creative-tim.com",
+						job: "Manager",
+						org: "Organization",
+						online: true,
+						date: "23/04/18",
+					},
+					{
+						img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg",
+						name: "Alexa Liras",
+						email: "alexa@creative-tim.com",
+						job: "Programator",
+						org: "Developer",
+						online: false,
+						date: "23/04/18",
+					},
+					// Agrega aquí dos afiliados más para cumplir con el requisito mínimo de 4 por ciudad
+					{
+						img: "https://example.com/img.jpg",
+						name: "Juan Pérez",
+						email: "juan@example.com",
+						job: "Analista",
+						org: "Empresa",
+						online: true,
+						date: "23/04/18",
+					},
+					{
+						img: "https://example.com/img.jpg",
+						name: "María García",
+						email: "maria@example.com",
+						job: "Diseñador",
+						org: "Empresa",
+						online: true,
+						date: "23/04/18",
+					},
+				],
+			},
+			{
+				name: "Caleufu",
+				affiliate: [
+					{
+						img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg",
+						name: "John Michael",
+						email: "john@creative-tim.com",
+						job: "Manager",
+						org: "Organization",
+						online: true,
+						date: "23/04/18",
+					},
+					{
+						img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg",
+						name: "Alexa Liras",
+						email: "alexa@creative-tim.com",
+						job: "Programator",
+						org: "Developer",
+						online: false,
+						date: "23/04/18",
+					},
+					// Agrega aquí dos afiliados más para cumplir con el requisito mínimo de 4 por ciudad
+					{
+						img: "https://example.com/img.jpg",
+						name: "Juan Pérez",
+						email: "juan@example.com",
+						job: "Analista",
+						org: "Empresa",
+						online: true,
+						date: "23/04/18",
+					},
+					{
+						img: "https://example.com/img.jpg",
+						name: "María García",
+						email: "maria@example.com",
+						job: "Diseñador",
+						org: "Empresa",
+						online: true,
+						date: "23/04/18",
+					},
+				],
+			},
+		],
 	},
 	{
-		img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg",
-		name: "Alexa Liras",
-		email: "alexa@creative-tim.com",
-		job: "Programator",
-		org: "Developer",
-		online: false,
-		date: "23/04/18",
-	},
-	{
-		img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg",
-		name: "Laurent Perrier",
-		email: "laurent@creative-tim.com",
-		job: "Executive",
-		org: "Projects",
-		online: false,
-		date: "19/09/17",
-	},
-	{
-		img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg",
-		name: "Michael Levi",
-		email: "michael@creative-tim.com",
-		job: "Programator",
-		org: "Developer",
-		online: true,
-		date: "24/12/08",
-	},
-	{
-		img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-5.jpg",
-		name: "Richard Gran",
-		email: "richard@creative-tim.com",
-		job: "Manager",
-		org: "Executive",
-		online: false,
-		date: "04/10/21",
+		department: "Maraco",
+		location: [
+			{
+				name: "General Pico",
+				affiliate: [
+					// Agrega aquí cuatro afiliados para cumplir con el requisito mínimo de 4 por ciudad
+					{
+						img: "https://example.com/img.jpg",
+						name: "Carlos Rodríguez",
+						email: "carlos@example.com",
+						job: "Ingeniero",
+						org: "Empresa",
+						online: false,
+						date: "23/04/18",
+					},
+					{
+						img: "https://example.com/img.jpg",
+						name: "Luisa Martínez",
+						email: "luisa@example.com",
+						job: "Gerente",
+						org: "Empresa",
+						online: true,
+						date: "23/04/18",
+					},
+					{
+						img: "https://example.com/img.jpg",
+						name: "Pedro Sánchez",
+						email: "pedro@example.com",
+						job: "Desarrollador",
+						org: "Empresa",
+						online: true,
+						date: "23/04/18",
+					},
+					{
+						img: "https://example.com/img.jpg",
+						name: "Ana Fernández",
+						email: "ana@example.com",
+						job: "Analista",
+						org: "Empresa",
+						online: false,
+						date: "23/04/18",
+					},
+				],
+			},
+			{
+				name: "Eduardo Castex",
+				affiliate: [
+					{
+						img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg",
+						name: "John Michael",
+						email: "john@creative-tim.com",
+						job: "Manager",
+						org: "Organization",
+						online: true,
+						date: "23/04/18",
+					},
+					{
+						img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg",
+						name: "Alexa Liras",
+						email: "alexa@creative-tim.com",
+						job: "Programator",
+						org: "Developer",
+						online: false,
+						date: "23/04/18",
+					},
+					// Agrega aquí dos afiliados más para cumplir con el requisito mínimo de 4 por ciudad
+					{
+						img: "https://example.com/img.jpg",
+						name: "Juan Pérez",
+						email: "juan@example.com",
+						job: "Analista",
+						org: "Empresa",
+						online: true,
+						date: "23/04/18",
+					},
+					{
+						img: "https://example.com/img.jpg",
+						name: "María García",
+						email: "maria@example.com",
+						job: "Diseñador",
+						org: "Empresa",
+						online: true,
+						date: "23/04/18",
+					},
+				],
+			},
+		],
 	},
 ];
 
@@ -163,11 +214,11 @@ export default function SortableTable() {
 	return (
 		// @ts-ignore
 		// @ts-ignore
-		<Card className="h-full w-full">
+		<Card className="h-full w-full  overflow-hidden">
 			{/* @ts-ignore */}
 			<CardBody className="py-0 overflow-y-auto  px-0">
-				<table className="mt-4 w-full min-w-max table-auto text-left">
-					<thead>
+				<table className="mt-4 w-full min-w-max table-auto text-left ">
+					<thead className="">
 						<tr>
 							{TABLE_HEAD.map((head, index) => (
 								<th
@@ -189,77 +240,20 @@ export default function SortableTable() {
 						</tr>
 					</thead>
 					<tbody>
-						{TABLE_ROWS.map(
-							({ img, name, email, job, org, online, date }, index) => {
-								const isLast = index === TABLE_ROWS.length - 1;
-								const classes = isLast
-									? "p-4"
-									: "p-4 border-b border-blue-gray-50";
-
-								return (
-									<tr key={name} className="text-sm">
-										<td className={classes}>
-											<div className="flex items-center gap-3">
-												{/* @ts-ignore */}
-												<div className="flex flex-col">
-													{/* @ts-ignore */}
-													<p color="blue-gray" className="font-normal">
-														{name}
-													</p>
-													{/* @ts-ignore */}
-													<p
-														color="blue-gray"
-														className="font-normal opacity-70"
-													>
-														{email}
-													</p>
-												</div>
-											</div>
-										</td>
-										<td className={classes}>
-											<div className="flex flex-col">
-												{/* @ts-ignore */}
-												<p color="blue-gray" className="font-normal">
-													{job}
-												</p>
-												{/* @ts-ignore */}
-												<p color="blue-gray" className="font-normal opacity-70">
-													{org}
-												</p>
-											</div>
-										</td>
-										<td className={classes}>
-											<div className="w-max">
-												<Chip
-													variant="ghost"
-													size="sm"
-													value={online ? "online" : "offline"}
-													color={online ? "green" : "blue-gray"}
-												/>
-											</div>
-										</td>
-										<td className={classes}>
-											{/* @ts-ignore */}
-											<p
-												variant="small"
-												color="blue-gray"
-												className="font-normal"
-											>
-												{date}
-											</p>
-										</td>
-										<td className={classes}>
-											<Tooltip content="Edit User">
-												{/* @ts-ignore */}
-												<IconButton variant="text">
-													<PencilIcon className="h-4 w-4" />
-												</IconButton>
-											</Tooltip>
-										</td>
-									</tr>
-								);
-							}
-						)}
+						{TABLE_ROWS.map(({ department, location }: any, index) => {
+							const dep = department;
+							return location.map((location: any) => {
+								const loc = location.name;
+								return location.affiliate.map((afi: any, index: number) => {
+									return (
+										<ItemTable
+											key={index}
+											{...{ ...afi, deparment: dep, location: loc, index }}
+										/>
+									);
+								});
+							});
+						})}
 					</tbody>
 				</table>
 			</CardBody>

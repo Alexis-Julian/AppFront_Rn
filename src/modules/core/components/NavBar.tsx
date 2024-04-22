@@ -2,7 +2,7 @@
 
 "use client";
 import React from "react";
-
+import { useEffect, useState } from "react";
 import {
 	CubeTransparentIcon,
 	UserCircleIcon,
@@ -126,19 +126,18 @@ function ProfileMenu() {
 // nav list menu
 const navListMenuItems = [
 	{
-		title: "@material-tailwind/html",
-		description:
-			"Learn how to use @material-tailwind/html, packed with rich components and widgets.",
+		title: "Gestor de datos",
+		description: "Aqui podras crear / editar / eliminar filas de la tabla",
 	},
 	{
-		title: "@material-tailwind/react",
+		title: "Historial de cambios",
 		description:
-			"Learn how to use @material-tailwind/react, packed with rich components for React.",
+			"Aqui podra ver el historial de los cambios realizados en los ultimos 30 dias",
 	},
 	{
-		title: "Material Tailwind PRO",
+		title: "Exportar los datos a excel",
 		description:
-			"A complete set of UI Elements for building faster websites in less time.",
+			"Aqui podras convertir todos los datos a un archivo excel podras hacerlo con esta opcion (procura tener almacenamiento libre)",
 	},
 ];
 
@@ -150,13 +149,9 @@ function NavListMenu() {
 			{/* @ts-ignore */}
 			<MenuItem>
 				{/* @ts-ignore */}
-				<Typography variant="h6" color="blue-gray" className="mb-1">
-					{title}
-				</Typography>
+				<p className="mb-1 text-lg text-black ">{title}</p>
 				{/* @ts-ignore */}
-				<Typography variant="small" color="gray" className="font-normal">
-					{description}
-				</Typography>
+				<p className="font-normal">{description}</p>
 			</MenuItem>
 		</a>
 	));
@@ -170,7 +165,7 @@ function NavListMenu() {
 						{/* @ts-ignore */}
 						<MenuItem className="hidden items-center gap-2 font-medium text-blue-gray-900 lg:flex lg:rounded-full">
 							<Square3Stack3DIcon className="h-[18px] w-[18px] text-blue-gray-500" />{" "}
-							Pages{" "}
+							Paginas{" "}
 							<ChevronDownIcon
 								strokeWidth={2}
 								className={`h-3 w-3 transition-transform ${
@@ -212,15 +207,16 @@ function NavListMenu() {
 // nav list component
 const navListItems = [
 	{
-		label: "Account",
-		icon: UserCircleIcon,
-	},
-	{
 		label: "Blocks",
 		icon: CubeTransparentIcon,
 	},
 	{
-		label: "Docs",
+		label: "Cuenta",
+		icon: UserCircleIcon,
+	},
+
+	{
+		label: "Ayuda",
 		icon: CodeBracketSquareIcon,
 	},
 ];

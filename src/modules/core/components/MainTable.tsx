@@ -188,7 +188,7 @@ export default function MainTable() {
 	]);
 
 	return (
-		<div className="overflow-y-auto w-full h-full  grid grid-rows-[0.2fr_1fr] ">
+		<div className="overflow-y-auto w-full h-full  grid grid-rows-[0.1fr_1fr] ">
 			<HeaderTable />
 			<ListTable />
 		</div>

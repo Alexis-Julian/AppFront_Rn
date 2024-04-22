@@ -39,22 +39,22 @@ export default function HeaderTable() {
 	}
 
 	return (
-		<header className="bg-quaternary/5 shadow-sm shadow-black/5 m-2 rounded-md text-white">
-			<section className="h-full flex justify-around  items-center">
+		<header className="bg-quaternary/5 shadow-sm shadow-black/5 m-2 rounded-md text-white min-h-[60px] max-h-[80px] ">
+			<section className="h-full flex justify-around  items-center ">
 				<label className="form-control w-full max-w-xs text-black">
-					<div className="label">
+					{/* <div className="label">
 						<span className="label-text">Buscar por nombre?</span>
-					</div>
+					</div> */}
 					<input
 						type="text"
-						placeholder="Escribe aqui..."
+						placeholder="Buscar por nombre?"
 						className="input input-bordered w-full max-w-xs bg-white"
 					/>
 				</label>
 				<section className="form-control w-full max-w-xs text-black">
-					<div className="label">
+					{/* 	<div className="label">
 						<span className="label-text">Buscar por estado?</span>
-					</div>
+					</div> */}
 					<form
 						className="relative grid grid-cols-3 p-0 gap-0    btn btn-ghost hover:bg-white bg-white text-black border-none"
 						onSubmit={changeStateOrdinance}
@@ -79,12 +79,12 @@ export default function HeaderTable() {
 					</form>
 				</section>
 				<label className="form-control w-full max-w-xs text-black">
-					<div className="label">
+					{/* <div className="label">
 						<span className="label-text">Buscar por departamento?</span>
-					</div>
+					</div> */}
 					<input
 						type="text"
-						placeholder="Escribe aqui..."
+						placeholder="Buscar por departamento?"
 						className="input input-bordered w-full max-w-xs bg-white"
 					/>
 				</label>
