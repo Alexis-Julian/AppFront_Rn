@@ -1,0 +1,58 @@
+[
+	{
+		"department": "Capital",
+		"location": "Santa Rosa",
+		"name": "Martin",
+		"address": "H.Lagos 394",
+		"TEL": "42343",
+		"REG.N": "1.T"
+	},
+	{
+		"department": "Capital",
+		"location": "Santa Rosa",
+		"name": "Raul",
+		"address": "H.Lagos 394",
+		"TEL": "42343",
+		"REG.N": "1.T"
+	},
+	{
+		"department": "Maraco",
+		"location": "General Pico",
+		"name": "Melani",
+		"address": "H.Lagos 394",
+		"TEL": "42343",
+		"REG.N": "1.T"
+	},
+	{
+		"department": "Maraco",
+		"location": "General Pico",
+		"name": "Maria Eugenia",
+		"address": "H.Lagos 394",
+		"TEL": "42343",
+		"REG.N": "1.T"
+	},
+	{
+		"department": "Andreani",
+		"location": "General Pico",
+		"name": "Maria Eugenia",
+		"address": "H.Lagos 394",
+		"TEL": "42343",
+		"REG.N": "1.T"
+	},
+	{
+		"department": "Rancul",
+		"location": "Rancul",
+		"name": "Maria Resana",
+		"address": "H.Lagos 394",
+		"TEL": "42343",
+		"REG.N": "1.T"
+	},
+	{
+		"department": "Caleufu",
+		"location": "Rancul",
+		"name": "Giraudo",
+		"address": "H.Lagos 394",
+		"TEL": "42343",
+		"REG.N": "1.T"
+	}
+]
