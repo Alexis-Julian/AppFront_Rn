@@ -6,16 +6,18 @@ import {
 	BuildingLibraryIcon,
 } from "@heroicons/react/24/outline";
 
-export default function StepperWithContent() {
-	const [activeStep, setActiveStep] = React.useState(0);
-
+export default function StepperWithContent({
+	activeStep,
+}: {
+	activeStep: number;
+}) {
 	return (
-		<div className="w-[80%] mx-auto overflow-x-hidden px-4 py-4">
+		<div className="w-[80%] mx-auto overflow-x-hidden px-4 py-4   ">
 			{/* @ts-ignore */}
-			<Stepper activeStep={activeStep}>
+			<Stepper activeStep={activeStep} className="w-[80%] mx-auto ">
 				{/* @ts-ignore */}
 				<Step>
-					<UserIcon className="h-5 w-5" />
+					<UserIcon className="size-5" />
 					<div className="absolute -bottom-[3rem] w-max text-center">
 						<p className={activeStep === 0 ? "text-black" : "text-black/40"}>
 							Ubicacion
@@ -24,9 +26,8 @@ export default function StepperWithContent() {
 				</Step>
 				{/* @ts-ignore */}
 				<Step>
-					<CogIcon className="h-5 w-5" />
+					<CogIcon className="size-5" />
 					<div className="absolute -bottom-[3rem] w-max text-center">
-						{/* @ts-ignore */}
 						<p className={activeStep === 1 ? "text-black" : "text-black/40"}>
 							Creacion
 						</p>
@@ -34,7 +35,7 @@ export default function StepperWithContent() {
 				</Step>
 				{/* @ts-ignore */}
 				<Step>
-					<BuildingLibraryIcon className="h-5 w-5" />
+					<BuildingLibraryIcon className="size-5" />
 					<div className="absolute -bottom-[3rem] w-max text-center">
 						<p
 							className={activeStep === 2 ? "text-black" : "text-black/40"}
@@ -45,7 +46,7 @@ export default function StepperWithContent() {
 					</div>
 				</Step>
 			</Stepper>
-			<div className="mt-32 flex justify-between"></div>
+			<div className="mt-10 flex justify-between"></div>
 		</div>
 	);
 }

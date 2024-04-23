@@ -1,0 +1,16 @@
+export const DEPARTAMENTOS = [
+	"Capital",
+	"Maraco",
+	"Rancul",
+	"Quemu-Quemu",
+	"Conhelo",
+	"Utracan",
+	"Hucal",
+	"Realico",
+	"Chapaleufu",
+	"Atreuco",
+	"Toay",
+	"Trenel",
+	"Puelen",
+	"Loventue",
+];

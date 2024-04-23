@@ -1,3 +1,6 @@
+import InputOptionStyled from "./InputOptionStyled";
+import { DEPARTAMENTOS as dep } from "../shared/consts";
+
 export default function EditNotary() {
 	function InputPrimary({ label }: { label: string }) {
 		return (
@@ -13,40 +16,6 @@ export default function EditNotary() {
 			</label>
 		);
 	}
-	const dep = [
-		"Capital",
-		"Maraco",
-		"Rancul",
-		"Quemu-Quemu",
-		"Conhelo",
-		"Utracan",
-		"Hucal",
-		"Realico",
-		"Chapaleufu",
-		"Atreuco",
-		"Toay",
-		"Trenel",
-		"Puelen",
-		"Loventue",
-	];
-	function InputSelectDep({
-		details,
-		options,
-	}: {
-		details: string;
-		options: Array<string>;
-	}) {
-		return (
-			<select className="select w-full max-w-xs bg-white border-[0.5px] border-secondary/30 text-black mt-4">
-				<option disabled selected>
-					{details}
-				</option>
-				{options.map((name, index) => {
-					return <option key={index}>{name}</option>;
-				})}
-			</select>
-		);
-	}
 
 	return (
 		<div className="size-full  flex flex-col p-1">
@@ -59,8 +28,14 @@ export default function EditNotary() {
 					<InputPrimary label={"Telefono"} />
 					<InputPrimary label={"Direccion"} />
 					<InputPrimary label={"Email"} />
-					<InputSelectDep details={"Ingrese su departamento"} options={dep} />
-					<InputSelectDep details={"Ingrese su departamento"} options={dep} />
+					<InputOptionStyled
+						details={"Ingrese su departamento"}
+						options={dep}
+					/>
+					<InputOptionStyled
+						details={"Ingrese su departamento"}
+						options={dep}
+					/>
 					<input type="checkbox" className="toggle bg-white " />
 				</div>
 				{/* 	<div>
