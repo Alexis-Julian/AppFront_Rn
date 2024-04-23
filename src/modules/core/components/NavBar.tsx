@@ -1,8 +1,5 @@
-// @ts-ignore
-
 "use client";
 import React from "react";
-import { useEffect, useState } from "react";
 import {
 	CubeTransparentIcon,
 	UserCircleIcon,
@@ -29,6 +26,10 @@ import {
 	IconButton,
 	MobileNav,
 } from "@material-tailwind/react";
+import { useAppContext } from "@/context";
+
+import MenuNotary from "@/modules/notary/components/MenuNotary";
+import HistoryNotary from "@/modules/notary/components/HistoryNotary";
 
 // profile menu component
 const profileMenuItems = [
@@ -128,11 +129,13 @@ const navListMenuItems = [
 	{
 		title: "Gestor de datos",
 		description: "Aqui podras crear / editar / eliminar filas de la tabla",
+		component: <MenuNotary />,
 	},
 	{
 		title: "Historial de cambios",
 		description:
 			"Aqui podra ver el historial de los cambios realizados en los ultimos 30 dias",
+		component: <HistoryNotary />,
 	},
 	{
 		title: "Exportar los datos a excel",
@@ -143,18 +146,21 @@ const navListMenuItems = [
 
 function NavListMenu() {
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+	const { useComponent, setComponent } = useAppContext();
 
-	const renderItems = navListMenuItems.map(({ title, description }) => (
-		<a href="#" key={title}>
-			{/* @ts-ignore */}
-			<MenuItem>
+	const renderItems = navListMenuItems.map(
+		({ title, description, component }) => (
+			<a key={title} onClick={() => setComponent(<MenuNotary />)}>
 				{/* @ts-ignore */}
-				<p className="mb-1 text-lg text-black ">{title}</p>
-				{/* @ts-ignore */}
-				<p className="font-normal">{description}</p>
-			</MenuItem>
-		</a>
-	));
+				<MenuItem>
+					{/* @ts-ignore */}
+					<p className="mb-1 text-lg text-black ">{title}</p>
+					{/* @ts-ignore */}
+					<p className="font-normal">{description}</p>
+				</MenuItem>
+			</a>
+		)
+	);
 
 	return (
 		<React.Fragment>

@@ -1,18 +1,34 @@
+import { useAppContext } from "@/context";
+import CreateNotary from "./CreateNotary";
+import DeleteNotary from "./DeleteNotary";
+import EditNotary from "./EditNotary";
+import HistoryNotary from "./HistoryNotary";
+
 export default function MenuNotary() {
+	const { useComponent, setComponent } = useAppContext();
 	const navItemMenu = [
-		{ name: "Crear Registro Notarial", component: "" },
-		{ name: "Editar Registro Notarial", component: "" },
-		{ name: "Eliminar Registro Notarial", component: "" },
-		{ name: "Historial", component: "" },
+		{ name: "Crear Registro Notarial", component: <CreateNotary /> },
+		{ name: "Editar Registro Notarial", component: <EditNotary /> },
+		{ name: "Eliminar Registro Notarial", component: <DeleteNotary /> },
+		{ name: "Historial", component: <HistoryNotary /> },
 		{ name: "Configuraciones", component: "" },
 		{ name: "Reportar Error", component: "" },
 		{ name: "Salir", component: "" },
 	];
 
-	function ItemNavNotary({ name }: { name: string }) {
+	function ItemNavNotary({
+		name,
+		component,
+	}: {
+		name: string;
+		component: React.ReactNode;
+	}) {
 		return (
 			<li className="h-[80px] w-full  mb-3">
-				<button className="uppercase size-full  btn text-white bg-black/80  hover:bg-black/30 hover:border-none hover:text-black text-lg">
+				<button
+					onClick={() => setComponent(component)}
+					className="uppercase size-full  btn text-white bg-black/80  hover:bg-black/30 hover:border-none hover:text-black text-lg"
+				>
 					{name}
 				</button>
 			</li>
@@ -30,7 +46,13 @@ export default function MenuNotary() {
 			<nav className="h-[90%] border-quaternary rounded-b-lg border-[0.1px] border-t-0 p-1 flex flex-col gap-4 text-2xl  ">
 				<ul className="text-black">
 					{navItemMenu.map((item, index) => {
-						return <ItemNavNotary key={index} name={item.name} />;
+						return (
+							<ItemNavNotary
+								key={index}
+								name={item.name}
+								component={item.component}
+							/>
+						);
 					})}
 				</ul>
 			</nav>
