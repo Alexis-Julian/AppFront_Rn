@@ -8,13 +8,22 @@ import {
 
 export default function StepperWithContent({
 	activeStep,
+	setIsLastStep,
+	setIsFirstStep,
 }: {
 	activeStep: number;
+	setIsLastStep: any;
+	setIsFirstStep: any;
 }) {
 	return (
 		<div className="w-[80%] mx-auto overflow-x-hidden px-4 py-4   ">
 			{/* @ts-ignore */}
-			<Stepper activeStep={activeStep} className="w-[80%] mx-auto ">
+			<Stepper
+				activeStep={activeStep}
+				className="w-[80%] mx-auto "
+				isLastStep={(value) => setIsLastStep(value)}
+				isFirstStep={(value) => setIsFirstStep(value)}
+			>
 				{/* @ts-ignore */}
 				<Step>
 					<UserIcon className="size-5" />
